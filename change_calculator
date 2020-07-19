@@ -6,7 +6,6 @@ def change_calculator():
     if paid > total:
       change_dict = {'quarter':0,'dime':0,'nickel':0,'penny':0}
       change = int((paid - total) * 100)
-      print(change)
       while change > 0:
         if change > 24:
           change -= 25
