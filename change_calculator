@@ -1,0 +1,38 @@
+def change_calculator():
+  while True:
+    total = float(input('Enter total cost in dollars:\n'))
+    paid = float(input('Enter money paid in dollars: \n'))
+    
+    if paid > total:
+      change_dict = {'quarter':0,'dime':0,'nickel':0,'penny':0}
+      change = int((paid - total) * 100)
+      print(change)
+      while change > 0:
+        if change > 24:
+          change -= 25
+          change_dict['quarters'] += 1
+        elif change < 25 and change > 9:
+          change -= 10
+          change_dict['dimes'] += 1
+        elif change < 10 and change > 4:
+          change -= 5
+          change_dict['nickels'] += 1
+        elif change < 5:
+          change -= 1
+          change_dict['pennies'] += 1
+    
+      print(change_dict)
+   
+    elif paid == total:
+      print('No change needed!')
+      break
+      
+    else:
+      print('Cash paid is less than total cost!')
+
+change_calculator()
+    
+      
+    
+  
+  
