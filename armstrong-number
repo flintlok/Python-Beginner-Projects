@@ -1,0 +1,14 @@
+def armstrong_number():
+    while True:
+        x = 0
+        n = input('Check if your number is an Armstrong Number:\n')
+        for digit in n:
+            x += (int(digit)**len(n))
+        if x == int(n):
+            print('Yes!\n')
+        else:
+            print('No!\n')
+    
+
+
+armstrong_number()
