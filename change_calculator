@@ -5,21 +5,25 @@ def change_calculator():
     
     if paid > total:
       change_dict = {'quarter':0,'dime':0,'nickel':0,'penny':0}
-      change = int((paid - total) * 100)
+      change = round(((paid - total) * 100))
       while change > 0:
+          
         if change > 24:
           change -= 25
-          change_dict['quarters'] += 1
-        elif change < 25 and change > 9:
+          change_dict['quarter'] += 1
+          
+        elif 9 < change < 25:
           change -= 10
-          change_dict['dimes'] += 1
-        elif change < 10 and change > 4:
+          change_dict['dime'] += 1
+          
+        elif 4 < change < 10:
           change -= 5
-          change_dict['nickels'] += 1
+          change_dict['nickel'] += 1
+          
         elif change < 5:
           change -= 1
-          change_dict['pennies'] += 1
-    
+          change_dict['penny'] += 1
+
       print(change_dict)
    
     elif paid == total:
@@ -35,3 +39,4 @@ change_calculator()
     
   
   
+
