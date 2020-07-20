@@ -1,0 +1,14 @@
+def fibonacci():
+    n = int(input('Find the number in the fibonacci sequence in index:\n'))
+    a,b = 1,1
+    print(str(a)+'\n'+str(b))
+    for i in range(n-2):
+        c = a + b
+        a = b
+        b = c
+        print(b)
+    print('The {}th fibonacci number is {}!'.format(n,b))
+        
+        
+fibonacci()
+    
