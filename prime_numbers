@@ -1,0 +1,10 @@
+
+def find_prime(n):
+    lst = []
+    for num in range(2,n+1): #the actual number
+        for divisor in range(2,num): #the divisor (denominator)
+            if num % divisor == 0:
+                break
+        else:
+            lst.append(num)
+    return lst
